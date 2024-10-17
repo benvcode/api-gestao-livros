@@ -17,7 +17,7 @@ def test_app(request):
     with app.app_context():
         if config_class == "config.DevConfig":
             # SQLite em memória não suporta esquemas
-            # Remover o schema 'deltruck' para garantir que os testes funcionem corretamente
+            # Remover o schema 'gestao_livros' para garantir que os testes funcionem corretamente
             for table in db.metadata.sorted_tables:
                 if table.schema == "gestao_livros":
                     table.schema = None
